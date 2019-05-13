@@ -1,0 +1,132 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	width: 470px;
+	height: 500px;
+	margin: 0;
+	background-image: linear-gradient(-180deg, #0F1122 0%, #1F0E22 100%);
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: rgba(255, 255, 255, .5);
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.kategori {
+	display: inline-block;
+	padding: 5px;
+	cursor: pointer;
+	transition: color .5s, background-color .5s;
+}
+
+.kategori:hover {
+	color: rgba(255, 255, 255, .75);
+}
+
+#kategoriler .seçili {
+	background-color: rgba(0,0,0,0.10);
+	color: rgba(255, 255, 255, .9);
+}
+
+#alt-kategoriler .seçili {
+	background-color: rgba(0,0,0,0.20);
+	color: rgba(255, 255, 255, .9);
+}
+
+#kaomojiler-konteyner {
+	overflow: auto;
+	background-color: rgba(0, 0, 0, .3);
+	flex-grow: 1;
+}
+
+#kaomojiler {
+	width: 100%;
+	height: 100%;
+	padding: 5px 23px 5px 5px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 75%;
+	text-align: center;
+	justify-content: center;
+}
+
+.kaomoji {
+	padding: 5px;
+	display: inline-block;
+	min-width: calc(100% / 3);
+	cursor: pointer;
+	justify-content: center;
+	align-self: center;
+	transition: transform .1s;
+}
+
+.kaomoji:hover {
+	color: rgba(255, 255, 255, .75);
+}
+
+.kaomoji:active {
+	transform: scale(2);
+}
+
+/* scrollbar */
+.ss-wrapper {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	float: left;
+}
+
+.ss-content {
+	height: 100%;
+	width: calc(100% + 18px);
+	padding: 0 0 0 0;
+	position: relative;
+	overflow: auto;
+	box-sizing: border-box;
+}
+
+.ss-content.rtl {
+	width: calc(100% + 18px);
+	right: auto;
+}
+
+.ss-scroll {
+	position: relative;
+	background: rgba(0, 0, 0, 0.1);
+	width: 9px;
+	border-radius: 4px;
+	top: 0;
+	z-index: 2;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.25s linear;
+}
+
+.ss-hidden {
+	display: none;
+}
+
+.ss-container:hover .ss-scroll,
+.ss-container:active .ss-scroll {
+	opacity: 1;
+}
+
+.ss-grabbed {
+	-o-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
