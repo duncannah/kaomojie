@@ -1,0 +1,190 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: --apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Arial, sans-serif;
+	font-size: 16px;
+
+	overflow: hidden;
+
+	width: 400px;
+	height: 300px;
+	margin: 0;
+
+	-moz-user-select: none;
+	     user-select: none;
+
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+
+#app {
+	position: relative;
+
+	display: flex;
+	overflow: inherit;
+	flex-direction: column;
+
+	width: inherit;
+	height: inherit;
+
+	color: #fff;
+	background: #070707;
+
+	ol {
+		margin: 0;
+		padding: 0;
+
+		list-style-type: none;
+	}
+
+	.info-btn {
+		font-size: 60%;
+		font-weight: 100;
+
+		position: absolute;
+		top: 4px;
+		right: 4px;
+
+		cursor: pointer;
+		text-align: right;
+
+		opacity: .25;
+
+		&:hover {
+			opacity: .75;
+		}
+	}
+
+	.info {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: flex;
+
+		width: 100%;
+		height: 100%;
+
+		transition: .5s opacity;
+		text-align: center;
+
+		opacity: 1;
+		background: rgba(0, 0, 0, .75);
+
+		align-items: center;
+		justify-content: center;
+
+		&:not(.show) {
+			pointer-events: none;
+
+			opacity: 0;
+		}
+
+		.info-close {
+			font-size: 2em;
+			line-height: 1;
+
+			position: absolute;
+			top: 20px;
+			right: 20px;
+
+			cursor: pointer;
+		}
+
+		.info-content {
+			font-size: 75%;
+
+			.info-title {
+				font-size: 3em;
+				font-weight: 200;
+			}
+
+			p {
+				margin: 2em 0;
+			}
+
+			a {
+				text-decoration: none;
+
+				opacity: .5;
+				color: inherit;
+
+				&:hover, &:active {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	.categories, .sub-categories {
+		li {
+			padding: 2px 4px;
+
+			cursor: pointer;
+
+			&:not(.active) {
+				opacity: .5;
+
+				&:hover {
+					opacity: .75;
+				}
+			}
+		}
+	}
+
+	.scroll-area {
+		font-size: 75%;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		padding: 0 0 10px 0;
+
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			width: 1px;
+			height: 0;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: rgba(255, 255, 255, .75);
+		}
+	}
+
+	.kaomojis {
+		text-align: center;
+
+		li {
+			position: relative;
+
+			min-width: calc(100% / 3);
+			padding: 10px;
+
+			cursor: pointer;
+			transition: color .25s, text-shadow .25s, transform .25s;
+
+			opacity: .75;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&:active {
+				z-index: 1;
+
+				transition: none;
+				transform: scale(1.5);
+
+				color: #8020ff;
+				text-shadow: 0 0 2px;
+			}
+		}
+	}
+}
