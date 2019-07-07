@@ -2,7 +2,7 @@
 
 ![screenshot](assets/screenshots/01.png)
 
-Git repository for the Chrome extension **kaomojie**.
+Git repository for the browser extension **kaomojie**.
 
 **Easy and fast access to hundreds of kaomojis, all categorised!**
 
@@ -11,9 +11,10 @@ Git repository for the Chrome extension **kaomojie**.
 
 ## Building
 
-```
-gulp
-```
+We use Gulp to transpile source code and ready the extension for deployment.
+
+-   `gulp`: build
+-   `gulp deploy`: build and zip (build/archive.zip)
 
 ## License
 
