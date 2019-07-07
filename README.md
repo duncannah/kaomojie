@@ -13,8 +13,11 @@ Git repository for the browser extension **kaomojie**.
 
 We use Gulp to transpile source code and ready the extension for deployment.
 
--   `gulp`: build
--   `gulp deploy`: build and zip (build/archive.zip)
+1. Install node dependencies: `npm install` or `yarn install`
+2. Install gulp: `npm install -G gulp-cli` or `yarn global add gulp-cli`
+3. Build: `gulp` (to folder `build`)
+
+`gulp deploy` also zips up the build for deployment (build/archive.zip).
 
 ## License
 
