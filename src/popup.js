@@ -90,7 +90,6 @@ class App extends preact.Component {
 								https://github.com/duncannah/kaomojie
 							</a>
 						</p>
-						{/*<p>({navigator.platform === "MacIntel" ? "⌘" : "Ctrl"} + click to open)</p>*/}
 					</div>
 				</div>
 			</>
