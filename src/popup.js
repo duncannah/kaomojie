@@ -67,7 +67,7 @@ class App extends preact.Component {
 						{KAOMOJIS[this.state.curCat][this.state.curSub].map((c, i) => (
 							<li
 								key={this.state.curCat + this.state.curSub + i}
-								onClick={() => navigator.clipboard.writeText(c)}>
+								onMouseDown={() => navigator.clipboard.writeText(c)}>
 								{c}
 							</li>
 						))}
