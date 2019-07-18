@@ -1,19 +1,19 @@
 {
-  "name": "kaomojie",
-  "version": "2.0.0",
-  "repository": "https://github.com/duncannah/kaomojie.git",
-  "author": "duncannah",
-  "license": "AGPL-3.0",
-  "private": false,
-  "dependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "fs-extra": "^8.0.1",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0-beta.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-zip": "^5.0.0",
-    "node-sass": "^4.12.0"
-  }
+	"name": "kaomojie",
+	"version": "2.0.1",
+	"repository": "https://github.com/duncannah/kaomojie.git",
+	"author": "duncannah",
+	"license": "AGPL-3.0",
+	"private": false,
+	"dependencies": {
+		"@babel/core": "^7.4.5",
+		"@babel/plugin-proposal-class-properties": "^7.4.4",
+		"@babel/preset-react": "^7.0.0",
+		"fs-extra": "^8.0.1",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0-beta.2",
+		"gulp-sass": "^4.0.2",
+		"gulp-zip": "^5.0.0",
+		"node-sass": "^4.12.0"
+	}
 }
