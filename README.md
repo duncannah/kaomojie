@@ -6,8 +6,8 @@ Git repository for the browser extension **kaomojie**.
 
 **Easy and fast access to hundreds of kaomojis, all categorised!**
 
-[![Chrome Web Store](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/kaomojie/lmejjdlbclkidnpmcoknihonapppadid)
-[![Firefox Add-ons](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/kaomojie/)
+[![Chrome Web Store](https://i.imgur.com/Jg37GE6.png)](https://chrome.google.com/webstore/detail/kaomojie/lmejjdlbclkidnpmcoknihonapppadid)
+[![Firefox Add-ons](https://i.imgur.com/F5FHwjU.png)](https://addons.mozilla.org/en-US/firefox/addon/kaomojie/) [![Microsoft Edge Add-ons](https://i.imgur.com/CYExt3c.png)](https://microsoftedge.microsoft.com/addons/detail/efiejeadkjimlaknanikfjafmcpokhgc)
 
 ## Building
 
