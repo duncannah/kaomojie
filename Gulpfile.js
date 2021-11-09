@@ -3,12 +3,10 @@ const path = require("path");
 
 const { series, src, dest } = require("gulp");
 const babel = require("gulp-babel");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
 const zip = require("gulp-zip");
 
 const BUILDPATH = path.join(__dirname, "/build");
-
-sass.compiler = require("node-sass");
 
 async function clean() {
 	await fs.emptyDir(BUILDPATH);
