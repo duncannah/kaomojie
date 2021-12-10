@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "Kaomojie",
 	"version": "2.0.1",
 
@@ -14,7 +14,7 @@
 		"128": "assets/icons/icon128.png"
 	},
 
-	"browser_action": {
+	"action": {
 		"default_icon": {
 			"16": "assets/icons/icon16.png",
 			"32": "assets/icons/icon32.png",
