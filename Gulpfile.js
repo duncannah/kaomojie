@@ -3,7 +3,7 @@ const path = require("path");
 
 const { series, src, dest } = require("gulp");
 const babel = require("gulp-babel");
-const sass = require("gulp-sass")(require('sass'));
+const sass = require("gulp-sass")(require("sass"));
 const zip = require("gulp-zip");
 
 const BUILDPATH = path.join(__dirname, "/build");
@@ -13,31 +13,25 @@ async function clean() {
 }
 
 async function build() {
-	// copy
-	await (() =>
-		new Promise((resv) =>
-			src(["src/manifest.json"])
-				.pipe(dest("build/"))
-				.on("end", resv)
-		))();
-	await (() =>
-		new Promise((resv) =>
-			src(["src/popup.htm"])
-				.pipe(dest("build/"))
-				.on("end", resv)
-		))();
-	await (() =>
-		new Promise((resv) =>
-			src(["src/lib/*"])
-				.pipe(dest("build/lib"))
-				.on("end", resv)
-		))();
-	await (() =>
-		new Promise((resv) =>
-			src(["assets/**", "!assets/screenshots/**"])
-				.pipe(dest("build/assets"))
-				.on("end", resv)
-		))();
+	await Promise.all([
+		(() =>
+			new Promise((resv) =>
+				src(["src/manifest.json"]).pipe(dest("build/")).on("end", resv)
+			))(),
+		(() =>
+			new Promise((resv) => src(["src/popup.htm"]).pipe(dest("build/")).on("end", resv)))(),
+		(() => new Promise((resv) => src(["src/lib/*"]).pipe(dest("build/lib")).on("end", resv)))(),
+		(() =>
+			new Promise((resv) =>
+				src(["assets/**", "!assets/screenshots/**"])
+					.pipe(dest("build/assets"))
+					.on("end", resv)
+			))(),
+		(() =>
+			new Promise((resv) =>
+				src(["node_modules/preact/dist/preact.umd.js"]).pipe(dest("build")).on("end", resv)
+			))(),
+	]);
 
 	// transpile jsx
 	await (() =>
@@ -50,11 +44,11 @@ async function build() {
 								"@babel/preset-react",
 								{
 									pragma: "preact.createElement",
-									pragmaFrag: "preact.Fragment"
-								}
-							]
+									pragmaFrag: "preact.Fragment",
+								},
+							],
 						],
-						plugins: [["@babel/plugin-proposal-class-properties"]]
+						plugins: [["@babel/plugin-proposal-class-properties"]],
 					})
 				)
 				.pipe(dest("build/"))
@@ -92,16 +86,19 @@ async function build() {
 		});
 	});
 
-	await fs.writeFile(path.join(BUILDPATH, "/kaomojis.js"), "const KAOMOJIS = " + JSON.stringify(kaomojiList));
+	await fs.writeFile(
+		path.join(BUILDPATH, "/popup.js"),
+		"const KAOMOJIS = " +
+			JSON.stringify(kaomojiList) +
+			";" +
+			(await fs.readFile(path.join(BUILDPATH, "/popup.js")))
+	);
 }
 
 async function zipBuild() {
 	await (() =>
 		new Promise((resv) =>
-			src("build/**")
-				.pipe(zip("archive.zip"))
-				.pipe(dest("build"))
-				.on("end", resv)
+			src("build/**").pipe(zip("archive.zip")).pipe(dest("build")).on("end", resv)
 		))();
 }
 

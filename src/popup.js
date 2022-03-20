@@ -6,7 +6,7 @@ class App extends preact.Component {
 			curCat: Object.keys(KAOMOJIS)[0],
 			curSub: Object.keys(KAOMOJIS[Object.keys(KAOMOJIS)[0]])[0],
 
-			showInfo: false
+			showInfo: false,
 		};
 	}
 
@@ -47,7 +47,8 @@ class App extends preact.Component {
 						<li
 							key={c}
 							className={this.state.curCat === c ? "active" : ""}
-							onClick={() => this._changeCat(c)}>
+							onClick={() => this._changeCat(c)}
+						>
 							{c}
 						</li>
 					))}
@@ -58,7 +59,8 @@ class App extends preact.Component {
 							<li
 								key={c}
 								className={this.state.curSub === c ? "active" : ""}
-								onClick={() => this._changeSub(c)}>
+								onClick={() => this._changeSub(c)}
+							>
 								{c}
 							</li>
 						))}
@@ -67,7 +69,8 @@ class App extends preact.Component {
 						{KAOMOJIS[this.state.curCat][this.state.curSub].map((c, i) => (
 							<li
 								key={this.state.curCat + this.state.curSub + i}
-								onMouseDown={() => navigator.clipboard.writeText(c)}>
+								onMouseDown={() => navigator.clipboard.writeText(c)}
+							>
 								{c}
 							</li>
 						))}
@@ -86,7 +89,11 @@ class App extends preact.Component {
 						<p>
 							Source code available under AGPL 3.0:
 							<br />
-							<a href="https://github.com/duncannah/kaomojie" rel="noopener noreferrer" target="_blank">
+							<a
+								href="https://github.com/duncannah/kaomojie"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
 								https://github.com/duncannah/kaomojie
 							</a>
 						</p>

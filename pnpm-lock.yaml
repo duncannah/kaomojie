@@ -10,6 +10,7 @@ specifiers:
   gulp-babel: 8.0.0
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0
+  preact: ^10.6.6
   sass: 1.49.7
 
 dependencies:
@@ -22,6 +23,7 @@ dependencies:
   gulp-babel: 8.0.0_@babel+core@7.17.4
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0_gulp@4.0.2
+  preact: 10.6.6
   sass: 1.49.7
 
 packages:
@@ -2685,6 +2687,10 @@ packages:
   /posix-character-classes/0.1.1:
     resolution: {integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /preact/10.6.6:
+    resolution: {integrity: sha512-dgxpTFV2vs4vizwKohYKkk7g7rmp1wOOcfd4Tz3IB3Wi+ivZzsn/SpeKJhRENSE+n8sUfsAl4S3HiCVT923ABw==}
     dev: false
 
   /pretty-hrtime/1.0.3:
