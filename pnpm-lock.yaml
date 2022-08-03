@@ -11,7 +11,7 @@ specifiers:
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0
   preact: 10.10.0
-  sass: 1.54.0
+  sass: 1.54.1
 
 dependencies:
   '@babel/core': 7.18.10
@@ -24,7 +24,7 @@ dependencies:
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0_gulp@4.0.2
   preact: 10.10.0
-  sass: 1.54.0
+  sass: 1.54.1
 
 packages:
 
@@ -3010,8 +3010,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
-  /sass/1.54.0:
-    resolution: {integrity: sha512-C4zp79GCXZfK0yoHZg+GxF818/aclhp9F48XBu/+bm9vXEVAYov9iU3FBVRMq3Hx3OA4jfKL+p2K9180mEh0xQ==}
+  /sass/1.54.1:
+    resolution: {integrity: sha512-GHJJr31Me32RjjUBagyzx8tzjKBUcDwo5239XANIRBq0adDu5iIG0aFO0i/TBb/4I9oyxkEv44nq/kL1DxdDhA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
