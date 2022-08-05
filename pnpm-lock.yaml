@@ -10,7 +10,7 @@ specifiers:
   gulp-babel: 8.0.0
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0
-  preact: 10.10.0
+  preact: 10.10.1
   sass: 1.54.3
 
 dependencies:
@@ -23,7 +23,7 @@ dependencies:
   gulp-babel: 8.0.0_@babel+core@7.18.10
   gulp-sass: 5.1.0
   gulp-zip: 5.1.0_gulp@4.0.2
-  preact: 10.10.0
+  preact: 10.10.1
   sass: 1.54.3
 
 packages:
@@ -2747,8 +2747,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /preact/10.10.0:
-    resolution: {integrity: sha512-fszkg1iJJjq68I4lI8ZsmBiaoQiQHbxf1lNq+72EmC/mZOsFF5zn3k1yv9QGoFgIXzgsdSKtYymLJsrJPoamjQ==}
+  /preact/10.10.1:
+    resolution: {integrity: sha512-cXljG59ylGtSLismoLojXPAGvnh2ipQr3BYz9KZQr+1sdASCT+sR/v8dSMDS96xGCdtln2wHfAHCnLJK+XcBNg==}
     dev: false
 
   /pretty-hrtime/1.0.3:
