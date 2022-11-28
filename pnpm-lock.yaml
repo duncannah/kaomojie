@@ -5,7 +5,7 @@ specifiers:
   '@babel/plugin-proposal-class-properties': 7.18.6
   '@babel/preset-react': 7.18.6
   cz-conventional-changelog: 3.3.0
-  fs-extra: 10.1.0
+  fs-extra: 11.0.0
   gulp: 4.0.2
   gulp-babel: 8.0.0
   gulp-sass: 5.1.0
@@ -18,7 +18,7 @@ dependencies:
   '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.20.5
   '@babel/preset-react': 7.18.6_@babel+core@7.20.5
   cz-conventional-changelog: 3.3.0
-  fs-extra: 10.1.0
+  fs-extra: 11.0.0
   gulp: 4.0.2
   gulp-babel: 8.0.0_@babel+core@7.20.5
   gulp-sass: 5.1.0
@@ -1569,9 +1569,9 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /fs-extra/10.1.0:
-    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
-    engines: {node: '>=12'}
+  /fs-extra/11.0.0:
+    resolution: {integrity: sha512-4YxRvMi4P5C3WQTvdRfrv5UVqbISpqjORFQAW5QPiKAauaxNCwrEdIi6pG3tDFhKKpMen+enEhHIzB/tvIO+/w==}
+    engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.9
       jsonfile: 6.1.0
@@ -2219,7 +2219,7 @@ packages:
     dev: false
 
   /jsonfile/4.0.0:
-    resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=}
+    resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
       graceful-fs: 4.2.9
     dev: false
