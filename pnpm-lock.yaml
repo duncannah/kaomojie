@@ -5,7 +5,7 @@ specifiers:
   '@babel/plugin-proposal-class-properties': 7.18.6
   '@babel/preset-react': 7.18.6
   cz-conventional-changelog: 3.3.0
-  fs-extra: 11.0.0
+  fs-extra: 11.1.0
   gulp: 4.0.2
   gulp-babel: 8.0.0
   gulp-sass: 5.1.0
@@ -18,7 +18,7 @@ dependencies:
   '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.20.5
   '@babel/preset-react': 7.18.6_@babel+core@7.20.5
   cz-conventional-changelog: 3.3.0
-  fs-extra: 11.0.0
+  fs-extra: 11.1.0
   gulp: 4.0.2
   gulp-babel: 8.0.0_@babel+core@7.20.5
   gulp-sass: 5.1.0
@@ -1569,8 +1569,8 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /fs-extra/11.0.0:
-    resolution: {integrity: sha512-4YxRvMi4P5C3WQTvdRfrv5UVqbISpqjORFQAW5QPiKAauaxNCwrEdIi6pG3tDFhKKpMen+enEhHIzB/tvIO+/w==}
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.9
