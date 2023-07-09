@@ -19,7 +19,7 @@
 		"gulp-babel": "8.0.0",
 		"gulp-sass": "5.1.0",
 		"gulp-zip": "5.1.0",
-		"preact": "10.15.1",
+		"preact": "10.16.0",
 		"sass": "1.63.6"
 	},
 	"config": {
