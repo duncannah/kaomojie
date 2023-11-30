@@ -20,7 +20,7 @@
 		"gulp-sass": "5.1.0",
 		"gulp-zip": "5.1.0",
 		"preact": "10.18.1",
-		"sass": "1.69.4"
+		"sass": "1.69.5"
 	},
 	"config": {
 		"commitizen": {
