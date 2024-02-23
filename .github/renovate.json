@@ -1,5 +1,3 @@
 {
-	"extends": ["config:base"],
-	"automerge": true,
-	"automergeType": "branch"
+	"enabled": false
 }
