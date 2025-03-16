@@ -1,0 +1,158 @@
+{
+	"lang": {
+		"message": "en"
+	},
+	"extName": {
+		"message": "Kaomojie: Effortless Kaomoji at Your Fingertips"
+	},
+	"extDescription": {
+		"message": "Easy and fast access to hundreds of kaomoji (Japanese emoticons)."
+	},
+	"extActionTitle": {
+		"message": "Kaomojie"
+	},
+	"version": {
+		"message": "version $1"
+	},
+	"sourceCodeDisclaimer": {
+		"message": "Source code available under AGPL 3.0:"
+	},
+	"category__feelings": {
+		"message": "Feelings"
+	},
+	"category__actions": {
+		"message": "Actions"
+	},
+	"category__animals": {
+		"message": "Animals"
+	},
+	"category__misc": {
+		"message": "Misc"
+	},
+	"subCategory__happy": {
+		"message": "Happy"
+	},
+	"subCategory__excited": {
+		"message": "Excited"
+	},
+	"subCategory__love": {
+		"message": "Love"
+	},
+	"subCategory__shy": {
+		"message": "Shy"
+	},
+	"subCategory__confident": {
+		"message": "Confident"
+	},
+	"subCategory__smug": {
+		"message": "Smug"
+	},
+	"subCategory__surprised": {
+		"message": "Surprised"
+	},
+	"subCategory__confused": {
+		"message": "Confused"
+	},
+	"subCategory__sad": {
+		"message": "Sad"
+	},
+	"subCategory__worried": {
+		"message": "Worried"
+	},
+	"subCategory__scared": {
+		"message": "Scared"
+	},
+	"subCategory__angry": {
+		"message": "Angry"
+	},
+	"subCategory__pain": {
+		"message": "Pain"
+	},
+	"subCategory__hungry": {
+		"message": "Hungry"
+	},
+	"subCategory__greet": {
+		"message": "Greet"
+	},
+	"subCategory__hug": {
+		"message": "Hug"
+	},
+	"subCategory__console": {
+		"message": "Console"
+	},
+	"subCategory__hide": {
+		"message": "Hide"
+	},
+	"subCategory__apologize": {
+		"message": "Apologize"
+	},
+	"subCategory__tableFlip": {
+		"message": "Table Flip"
+	},
+	"subCategory__shrug": {
+		"message": "Shrug"
+	},
+	"subCategory__wink": {
+		"message": "Wink"
+	},
+	"subCategory__run": {
+		"message": "Run"
+	},
+	"subCategory__write": {
+		"message": "Write"
+	},
+	"subCategory__drool": {
+		"message": "Drool"
+	},
+	"subCategory__sleep": {
+		"message": "Sleep"
+	},
+	"subCategory__cat": {
+		"message": "Cat"
+	},
+	"subCategory__dog": {
+		"message": "Dog"
+	},
+	"subCategory__bear": {
+		"message": "Bear"
+	},
+	"subCategory__rabbit": {
+		"message": "Rabbit"
+	},
+	"subCategory__pig": {
+		"message": "Pig"
+	},
+	"subCategory__bird": {
+		"message": "Bird"
+	},
+	"subCategory__fish": {
+		"message": "Fish"
+	},
+	"subCategory__spider": {
+		"message": "Spider"
+	},
+	"subCategory__friends": {
+		"message": "Friends"
+	},
+	"subCategory__enemies": {
+		"message": "Enemies"
+	},
+	"subCategory__weapons": {
+		"message": "Weapons"
+	},
+	"subCategory__magic": {
+		"message": "Magic"
+	},
+	"subCategory__food": {
+		"message": "Food"
+	},
+	"subCategory__music": {
+		"message": "Music"
+	},
+	"subCategory__games": {
+		"message": "Games"
+	},
+	"subCategory__owo": {
+		"message": "OwO"
+	}
+}

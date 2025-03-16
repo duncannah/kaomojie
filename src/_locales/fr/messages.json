@@ -1,0 +1,158 @@
+{
+	"lang": {
+		"message": "fr"
+	},
+	"extName": {
+		"message": "Kaomojie : Des kaomojis à portée de main"
+	},
+	"extDescription": {
+		"message": "Accès simple et rapide à des centaines de kaomoji (émoticônes japonaises)."
+	},
+	"extActionTitle": {
+		"message": "Kaomojie"
+	},
+	"version": {
+		"message": "version $1"
+	},
+	"sourceCodeDisclaimer": {
+		"message": "Code source disponible sous licence AGPL 3.0 :"
+	},
+	"category__feelings": {
+		"message": "Émotions"
+	},
+	"category__actions": {
+		"message": "Actions"
+	},
+	"category__animals": {
+		"message": "Animaux"
+	},
+	"category__misc": {
+		"message": "Divers"
+	},
+	"subCategory__happy": {
+		"message": "Heureux"
+	},
+	"subCategory__excited": {
+		"message": "Enthousiaste"
+	},
+	"subCategory__love": {
+		"message": "Amour"
+	},
+	"subCategory__shy": {
+		"message": "Timide"
+	},
+	"subCategory__confident": {
+		"message": "Confiant"
+	},
+	"subCategory__smug": {
+		"message": "Satisfait"
+	},
+	"subCategory__surprised": {
+		"message": "Surpris"
+	},
+	"subCategory__confused": {
+		"message": "Confus"
+	},
+	"subCategory__sad": {
+		"message": "Triste"
+	},
+	"subCategory__worried": {
+		"message": "Inquiet"
+	},
+	"subCategory__scared": {
+		"message": "Effrayé"
+	},
+	"subCategory__angry": {
+		"message": "En colère"
+	},
+	"subCategory__pain": {
+		"message": "Douleur"
+	},
+	"subCategory__hungry": {
+		"message": "Affamé"
+	},
+	"subCategory__greet": {
+		"message": "Saluer"
+	},
+	"subCategory__hug": {
+		"message": "Câlin"
+	},
+	"subCategory__console": {
+		"message": "Consoler"
+	},
+	"subCategory__hide": {
+		"message": "Cacher"
+	},
+	"subCategory__apologize": {
+		"message": "S'excuser"
+	},
+	"subCategory__tableFlip": {
+		"message": "Renverser la table"
+	},
+	"subCategory__shrug": {
+		"message": "Hausser les épaules"
+	},
+	"subCategory__wink": {
+		"message": "Clin d'œil"
+	},
+	"subCategory__run": {
+		"message": "Courir"
+	},
+	"subCategory__write": {
+		"message": "Écrire"
+	},
+	"subCategory__drool": {
+		"message": "Baver"
+	},
+	"subCategory__sleep": {
+		"message": "Dormir"
+	},
+	"subCategory__cat": {
+		"message": "Chat"
+	},
+	"subCategory__dog": {
+		"message": "Chien"
+	},
+	"subCategory__bear": {
+		"message": "Ours"
+	},
+	"subCategory__rabbit": {
+		"message": "Lapin"
+	},
+	"subCategory__pig": {
+		"message": "Cochon"
+	},
+	"subCategory__bird": {
+		"message": "Oiseau"
+	},
+	"subCategory__fish": {
+		"message": "Poisson"
+	},
+	"subCategory__spider": {
+		"message": "Araignée"
+	},
+	"subCategory__friends": {
+		"message": "Amis"
+	},
+	"subCategory__enemies": {
+		"message": "Ennemis"
+	},
+	"subCategory__weapons": {
+		"message": "Armes"
+	},
+	"subCategory__magic": {
+		"message": "Magie"
+	},
+	"subCategory__food": {
+		"message": "Nourriture"
+	},
+	"subCategory__music": {
+		"message": "Musique"
+	},
+	"subCategory__games": {
+		"message": "Jeux"
+	},
+	"subCategory__owo": {
+		"message": "OwO"
+	}
+}

@@ -133,6 +133,8 @@ body {
 
 			cursor: pointer;
 
+			text-transform: lowercase;
+
 			&:not(.active) {
 				opacity: 0.5;
 

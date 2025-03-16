@@ -20,6 +20,7 @@ export async function clean() {
 
 export async function copyAssets() {
 	await Promise.all([
+		streamToPromise(src("src/_locales/**").pipe(dest(join(BUILDPATH, "_locales")))),
 		streamToPromise(src("src/manifest.json").pipe(dest(BUILDPATH))),
 		streamToPromise(src("src/popup.htm").pipe(dest(BUILDPATH))),
 		streamToPromise(

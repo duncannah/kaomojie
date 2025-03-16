@@ -1,0 +1,158 @@
+{
+	"lang": {
+		"message": "tr"
+	},
+	"extName": {
+		"message": "Kaomojie: Parmaklarınızın Ucunda Kolay Kaomoji"
+	},
+	"extDescription": {
+		"message": "Yüzlerce kaomojiye (Japon emoticonları) hızlı ve kolay erişim."
+	},
+	"extActionTitle": {
+		"message": "Kaomojie"
+	},
+	"version": {
+		"message": "sürüm $1"
+	},
+	"sourceCodeDisclaimer": {
+		"message": "Kaynak kodu AGPL 3.0 lisansı altında mevcuttur:"
+	},
+	"category__feelings": {
+		"message": "Duygu"
+	},
+	"category__actions": {
+		"message": "Eylem"
+	},
+	"category__animals": {
+		"message": "Hayvan"
+	},
+	"category__misc": {
+		"message": "Diğer"
+	},
+	"subCategory__happy": {
+		"message": "Mutlu"
+	},
+	"subCategory__excited": {
+		"message": "Heyecanlı"
+	},
+	"subCategory__love": {
+		"message": "Aşk"
+	},
+	"subCategory__shy": {
+		"message": "Utangaç"
+	},
+	"subCategory__confident": {
+		"message": "Kendinden Emin"
+	},
+	"subCategory__smug": {
+		"message": "Memnun"
+	},
+	"subCategory__surprised": {
+		"message": "Şaşırmış"
+	},
+	"subCategory__confused": {
+		"message": "Kafası Karışmış"
+	},
+	"subCategory__sad": {
+		"message": "Üzgün"
+	},
+	"subCategory__worried": {
+		"message": "Endişeli"
+	},
+	"subCategory__scared": {
+		"message": "Korkmuş"
+	},
+	"subCategory__angry": {
+		"message": "Kızgın"
+	},
+	"subCategory__pain": {
+		"message": "Acı"
+	},
+	"subCategory__hungry": {
+		"message": "Aç"
+	},
+	"subCategory__greet": {
+		"message": "Selam"
+	},
+	"subCategory__hug": {
+		"message": "Sarılma"
+	},
+	"subCategory__console": {
+		"message": "Teselli"
+	},
+	"subCategory__hide": {
+		"message": "Saklan"
+	},
+	"subCategory__apologize": {
+		"message": "Özür"
+	},
+	"subCategory__tableFlip": {
+		"message": "Masa Devir"
+	},
+	"subCategory__shrug": {
+		"message": "Omuz Silkme"
+	},
+	"subCategory__wink": {
+		"message": "Göz Kırp"
+	},
+	"subCategory__run": {
+		"message": "Koş"
+	},
+	"subCategory__write": {
+		"message": "Yaz"
+	},
+	"subCategory__drool": {
+		"message": "Ağız Sulan"
+	},
+	"subCategory__sleep": {
+		"message": "Uyu"
+	},
+	"subCategory__cat": {
+		"message": "Kedi"
+	},
+	"subCategory__dog": {
+		"message": "Köpek"
+	},
+	"subCategory__bear": {
+		"message": "Ayı"
+	},
+	"subCategory__rabbit": {
+		"message": "Tavşan"
+	},
+	"subCategory__pig": {
+		"message": "Domuz"
+	},
+	"subCategory__bird": {
+		"message": "Kuş"
+	},
+	"subCategory__fish": {
+		"message": "Balık"
+	},
+	"subCategory__spider": {
+		"message": "Örümcek"
+	},
+	"subCategory__friends": {
+		"message": "Arkadaş"
+	},
+	"subCategory__enemies": {
+		"message": "Düşman"
+	},
+	"subCategory__weapons": {
+		"message": "Silah"
+	},
+	"subCategory__magic": {
+		"message": "Büyü"
+	},
+	"subCategory__food": {
+		"message": "Yiyecek"
+	},
+	"subCategory__music": {
+		"message": "Müzik"
+	},
+	"subCategory__games": {
+		"message": "Oyun"
+	},
+	"subCategory__owo": {
+		"message": "OwO"
+	}
+}

@@ -1,3 +1,5 @@
+document.documentElement.lang = chrome.i18n.getMessage("lang");
+
 class App extends preact.Component {
 	constructor(props) {
 		super(props);
@@ -49,7 +51,7 @@ class App extends preact.Component {
 							className={this.state.curCat === c ? "active" : ""}
 							onClick={() => this._changeCat(c)}
 						>
-							{c}
+							{chrome.i18n.getMessage(`category__${c}`) || c}
 						</li>
 					))}
 				</div>
@@ -61,7 +63,7 @@ class App extends preact.Component {
 								className={this.state.curSub === c ? "active" : ""}
 								onClick={() => this._changeSub(c)}
 							>
-								{c}
+								{chrome.i18n.getMessage(`subCategory__${c}`) || c}
 							</li>
 						))}
 					</div>
@@ -84,10 +86,13 @@ class App extends preact.Component {
 					<div className="info-content">
 						<div className="info-title">kaomojie</div>
 						<div className="info-version">
-							version {chrome.runtime ? chrome.runtime.getManifest().version : "..."}
+							{chrome.i18n.getMessage(
+								"version",
+								chrome.runtime ? chrome.runtime.getManifest().version : "..."
+							)}
 						</div>
 						<p>
-							Source code available under AGPL 3.0:
+							{chrome.i18n.getMessage("sourceCodeDisclaimer")}
 							<br />
 							<a
 								href="https://github.com/duncannah/kaomojie"

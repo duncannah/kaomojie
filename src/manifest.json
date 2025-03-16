@@ -1,9 +1,11 @@
 {
+	"$schema": "https://json.schemastore.org/chrome-manifest",
 	"manifest_version": 3,
-	"name": "Kaomojie: Effortless Kaomoji at Your Fingertips",
+	"name": "__MSG_extName__",
 	"version": "2.0.2",
+	"default_locale": "en",
 
-	"description": "Easy and fast access to hundreds of kaomoji (Japanese emoticons).",
+	"description": "__MSG_extDescription__",
 
 	"icons": {
 		"16": "assets/icons/icon16.png",
@@ -23,7 +25,7 @@
 			"96": "assets/icons/icon96.png",
 			"128": "assets/icons/icon128.png"
 		},
-		"default_title": "Kaomojie",
+		"default_title": "__MSG_extActionTitle__",
 		"default_popup": "popup.htm"
 	},
 
