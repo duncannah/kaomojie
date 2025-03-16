@@ -1,3 +1,9 @@
+$body-font: --apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Roboto,
+	Arial, sans-serif;
+$kaomoji-font: "YuKyokasho", "Yu Kyokasho N", "游ゴシック体", "游ゴシック", "Yu Gothic",
+	"游ゴシック体", "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+	Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", $body-font;
+
 *,
 *:before,
 *:after {
@@ -10,8 +16,7 @@ html {
 }
 
 body {
-	font-family: --apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Roboto,
-		Arial, sans-serif;
+	font-family: $body-font;
 	font-size: 16px;
 
 	overflow: hidden;
@@ -186,6 +191,7 @@ body {
 
 	.kaomojis {
 		text-align: center;
+		font-family: $kaomoji-font;
 
 		li {
 			position: relative;
