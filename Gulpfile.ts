@@ -22,7 +22,6 @@ export async function copyAssets() {
 	await Promise.all([
 		streamToPromise(src("src/manifest.json").pipe(dest(BUILDPATH))),
 		streamToPromise(src("src/popup.htm").pipe(dest(BUILDPATH))),
-		streamToPromise(src("src/lib/*").pipe(dest(join(BUILDPATH, "lib")))),
 		streamToPromise(
 			src(["assets/**", "!assets/screenshots/**"]).pipe(dest(join(BUILDPATH, "assets")))
 		),
