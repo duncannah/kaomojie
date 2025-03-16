@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+:root,
+html {
+	color-scheme: dark;
+}
+
 body {
 	font-family: --apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Roboto,
 		Arial, sans-serif;
@@ -149,11 +154,10 @@ body {
 		font-size: 75%;
 
 		overflow-x: hidden;
-		overflow-y: auto;
+		overflow-y: scroll;
+		flex-grow: 1;
 
 		padding: 0 0 10px 0;
-
-		scrollbar-width: thin;
 
 		&::-webkit-scrollbar {
 			width: 1px;
@@ -161,7 +165,13 @@ body {
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: rgba(255, 255, 255, 0.75);
+			background: rgba(255, 255, 255, 0.5);
+		}
+
+		@supports (not (selector(::-webkit-scrollbar))) {
+			& {
+				scrollbar-width: thin;
+			}
 		}
 	}
 
