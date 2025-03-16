@@ -1,12 +1,13 @@
 import { rm, readdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { src, dest, series } from "gulp";
+import { src as _src, dest, series } from "gulp";
 import babel from "gulp-babel";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import zip from "gulp-zip";
 
 const sass = gulpSass(dartSass);
+const src = (arg: Parameters<typeof _src>[0]) => _src(arg, { encoding: false });
 
 const BUILDPATH = join(import.meta.dirname, "build");
 
@@ -24,9 +25,7 @@ export async function copyAssets() {
 		streamToPromise(src("src/manifest.json").pipe(dest(BUILDPATH))),
 		streamToPromise(src("src/popup.htm").pipe(dest(BUILDPATH))),
 		streamToPromise(
-			src(["assets/**", "!assets/screenshots/**"], { encoding: false }).pipe(
-				dest(join(BUILDPATH, "assets"))
-			)
+			src(["assets/**", "!assets/screenshots/**"]).pipe(dest(join(BUILDPATH, "assets")))
 		),
 		streamToPromise(src("node_modules/preact/dist/preact.umd.js").pipe(dest(BUILDPATH))),
 	]);
