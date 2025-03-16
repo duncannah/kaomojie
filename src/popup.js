@@ -55,18 +55,18 @@ class App extends preact.Component {
 						</li>
 					))}
 				</div>
+				<div className="sub-categories">
+					{Object.keys(KAOMOJIS[this.state.curCat]).map((c) => (
+						<li
+							key={c}
+							className={this.state.curSub === c ? "active" : ""}
+							onClick={() => this._changeSub(c)}
+						>
+							{chrome.i18n.getMessage(`subCategory__${c}`) || c}
+						</li>
+					))}
+				</div>
 				<div className="scroll-area">
-					<div className="sub-categories">
-						{Object.keys(KAOMOJIS[this.state.curCat]).map((c) => (
-							<li
-								key={c}
-								className={this.state.curSub === c ? "active" : ""}
-								onClick={() => this._changeSub(c)}
-							>
-								{chrome.i18n.getMessage(`subCategory__${c}`) || c}
-							</li>
-						))}
-					</div>
 					<div className="kaomojis">
 						{KAOMOJIS[this.state.curCat][this.state.curSub].map((c, i) => (
 							<li

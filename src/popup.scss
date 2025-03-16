@@ -84,6 +84,8 @@ body {
 		align-items: center;
 		justify-content: center;
 
+		z-index: 100;
+
 		&:not(.show) {
 			pointer-events: none;
 
@@ -148,6 +150,13 @@ body {
 				}
 			}
 		}
+	}
+
+	.sub-categories {
+		font-size: 75%;
+
+		box-shadow: 0 6px 6px #000;
+		z-index: 1;
 	}
 
 	.scroll-area {
