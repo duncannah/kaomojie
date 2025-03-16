@@ -1,9 +1,9 @@
 {
 	"manifest_version": 3,
-	"name": "Kaomojie",
+	"name": "Kaomojie: Effortless Kaomoji at Your Fingertips",
 	"version": "2.0.2",
 
-	"description": "Easy and fast access to hundreds of kaomojis",
+	"description": "Easy and fast access to hundreds of kaomoji (Japanese emoticons).",
 
 	"icons": {
 		"16": "assets/icons/icon16.png",
