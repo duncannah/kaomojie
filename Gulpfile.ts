@@ -1,10 +1,8 @@
-import { readFileSync } from "node:fs";
 import { rm, readdir, writeFile, readFile } from "node:fs/promises";
-import { join } from "path";
-
-import { series, src, dest } from "gulp";
+import { join } from "node:path";
+import { src, dest, series } from "gulp";
 import babel from "gulp-babel";
-import * as dartSass from "sass";
+import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import zip from "gulp-zip";
 
@@ -12,101 +10,86 @@ const sass = gulpSass(dartSass);
 
 const BUILDPATH = join(import.meta.dirname, "build");
 
+// Utility function to handle stream completion
+const streamToPromise = (stream: NodeJS.ReadWriteStream) =>
+	new Promise((resolve, reject) => stream.on("end", resolve).on("error", reject));
+
 export async function clean() {
 	await rm(BUILDPATH, { recursive: true, force: true });
 }
 
-export async function build() {
+export async function copyAssets() {
 	await Promise.all([
-		(() =>
-			new Promise((resv) =>
-				src(["src/manifest.json"]).pipe(dest("build/")).on("end", resv)
-			))(),
-		(() =>
-			new Promise((resv) => src(["src/popup.htm"]).pipe(dest("build/")).on("end", resv)))(),
-		(() => new Promise((resv) => src(["src/lib/*"]).pipe(dest("build/lib")).on("end", resv)))(),
-		(() =>
-			new Promise((resv) =>
-				src(["assets/**", "!assets/screenshots/**"])
-					.pipe(dest("build/assets"))
-					.on("end", resv)
-			))(),
-		(() =>
-			new Promise((resv) =>
-				src(["node_modules/preact/dist/preact.umd.js"]).pipe(dest("build")).on("end", resv)
-			))(),
+		streamToPromise(src("src/manifest.json").pipe(dest(BUILDPATH))),
+		streamToPromise(src("src/popup.htm").pipe(dest(BUILDPATH))),
+		streamToPromise(src("src/lib/*").pipe(dest(join(BUILDPATH, "lib")))),
+		streamToPromise(
+			src(["assets/**", "!assets/screenshots/**"]).pipe(dest(join(BUILDPATH, "assets")))
+		),
+		streamToPromise(src("node_modules/preact/dist/preact.umd.js").pipe(dest(BUILDPATH))),
 	]);
+}
 
-	// transpile jsx
-	await (() =>
-		new Promise((resv) =>
-			src(["src/popup.js"])
-				.pipe(
-					babel({
-						presets: [
-							// @ts-ignore
-							[
-								"@babel/preset-react",
-								{
-									pragma: "preact.createElement",
-									pragmaFrag: "preact.Fragment",
-								},
-							],
+export async function transpileJSX() {
+	await streamToPromise(
+		src("src/popup.js")
+			.pipe(
+				babel({
+					presets: [
+						// @ts-ignore: typings are incorrect
+						[
+							"@babel/preset-react",
+							{ pragma: "preact.createElement", pragmaFrag: "preact.Fragment" },
 						],
-						// @ts-ignore
-						plugins: [["@babel/plugin-transform-class-properties"]],
-					})
-				)
-				.pipe(dest("build/"))
-				.on("end", resv)
-		))();
-
-	// transpile scss
-	await (() =>
-		new Promise((resv) =>
-			src(["src/popup.scss"])
-				.pipe(sass().on("error", sass.logError))
-				.pipe(dest("build/"))
-				.on("end", resv)
-		))();
-
-	// compile list
-	let kaomojiList: Record<string, Record<string, string[]>> = {};
-
-	await readdir(join(import.meta.dirname, "/kaomojis")).then((files) => {
-		files.forEach((file) => {
-			let kaomojis: Record<string, string[]> = {};
-
-			let currentCat = "";
-			readFileSync(join(import.meta.dirname, "/kaomojis", file))
-				.toString()
-				.split("\n")
-				.forEach((line) => {
-					if (line.startsWith("!!!!!!!!!!!!")) {
-						currentCat = line.substring(12).trim();
-						kaomojis[currentCat] = [];
-					} else if (line.trim().length > 0) kaomojis[currentCat].push(line.trim());
-				});
-
-			kaomojiList[file.substring(3)] = kaomojis;
-		});
-	});
-
-	await writeFile(
-		join(BUILDPATH, "/popup.js"),
-		"const KAOMOJIS = " +
-			JSON.stringify(kaomojiList) +
-			";\n" +
-			(await readFile(join(BUILDPATH, "/popup.js")))
+					],
+					plugins: ["@babel/plugin-transform-class-properties"],
+				})
+			)
+			.pipe(dest(BUILDPATH))
 	);
 }
 
-async function zipBuild() {
-	await (() =>
-		new Promise((resv) =>
-			src("build/**").pipe(zip("archive.zip")).pipe(dest("build")).on("end", resv)
-		))();
+export async function compileSCSS() {
+	await streamToPromise(
+		src("src/popup.scss").pipe(sass().on("error", sass.logError)).pipe(dest(BUILDPATH))
+	);
 }
+
+export async function compileKaomojis() {
+	const files = await readdir(join(import.meta.dirname, "kaomojis"));
+	const kaomojiList: Record<string, Record<string, string[]>> = {};
+
+	for (const file of files) {
+		const content = await readFile(join(import.meta.dirname, "kaomojis", file), "utf-8");
+		const lines = content.split("\n");
+
+		let currentCategory = "";
+		const kaomojis: Record<string, string[]> = {};
+
+		lines.forEach((line) => {
+			if (line.startsWith("!!!!!!!!!!!!")) {
+				currentCategory = line.substring(12).trim();
+				kaomojis[currentCategory] = [];
+			} else if (line.trim()) {
+				kaomojis[currentCategory].push(line.trim());
+			}
+		});
+
+		kaomojiList[file.substring(3)] = kaomojis;
+	}
+
+	const popupJsPath = join(BUILDPATH, "popup.js");
+	const existingPopupJs = await readFile(popupJsPath, "utf-8");
+	const newPopupJs = `const KAOMOJIS = ${JSON.stringify(kaomojiList)};\n${existingPopupJs}`;
+
+	await writeFile(popupJsPath, newPopupJs);
+}
+
+export async function zipBuild() {
+	await streamToPromise(src("build/**").pipe(zip("archive.zip")).pipe(dest(BUILDPATH)));
+}
+
+export const build = series(copyAssets, transpileJSX, compileSCSS, compileKaomojis);
 
 export const deploy = series(clean, build, zipBuild);
 
