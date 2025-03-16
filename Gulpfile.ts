@@ -1,18 +1,22 @@
-const fs = require("fs-extra");
-const path = require("path");
+import { readFileSync } from "node:fs";
+import { rm, readdir, writeFile, readFile } from "node:fs/promises";
+import { join } from "path";
 
-const { series, src, dest } = require("gulp");
-const babel = require("gulp-babel");
-const sass = require("gulp-sass")(require("sass"));
-const zip = require("gulp-zip");
+import { series, src, dest } from "gulp";
+import babel from "gulp-babel";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+import zip from "gulp-zip";
 
-const BUILDPATH = path.join(__dirname, "/build");
+const sass = gulpSass(dartSass);
 
-async function clean() {
-	await fs.emptyDir(BUILDPATH);
+const BUILDPATH = join(import.meta.dirname, "build");
+
+export async function clean() {
+	await rm(BUILDPATH, { recursive: true, force: true });
 }
 
-async function build() {
+export async function build() {
 	await Promise.all([
 		(() =>
 			new Promise((resv) =>
@@ -40,6 +44,7 @@ async function build() {
 				.pipe(
 					babel({
 						presets: [
+							// @ts-ignore
 							[
 								"@babel/preset-react",
 								{
@@ -48,7 +53,8 @@ async function build() {
 								},
 							],
 						],
-						plugins: [["@babel/plugin-proposal-class-properties"]],
+						// @ts-ignore
+						plugins: [["@babel/plugin-transform-class-properties"]],
 					})
 				)
 				.pipe(dest("build/"))
@@ -65,33 +71,33 @@ async function build() {
 		))();
 
 	// compile list
-	let kaomojiList = {};
+	let kaomojiList: Record<string, Record<string, string[]>> = {};
 
-	await fs.readdir(path.join(__dirname, "/kaomojis")).then((files) => {
+	await readdir(join(import.meta.dirname, "/kaomojis")).then((files) => {
 		files.forEach((file) => {
-			let kaomojis = {};
+			let kaomojis: Record<string, string[]> = {};
 
 			let currentCat = "";
-			fs.readFileSync(path.join(__dirname, "/kaomojis", file))
+			readFileSync(join(import.meta.dirname, "/kaomojis", file))
 				.toString()
 				.split("\n")
 				.forEach((line) => {
 					if (line.startsWith("!!!!!!!!!!!!")) {
-						currentCat = line.substr(12).trim();
+						currentCat = line.substring(12).trim();
 						kaomojis[currentCat] = [];
 					} else if (line.trim().length > 0) kaomojis[currentCat].push(line.trim());
 				});
 
-			kaomojiList[file.substr(3)] = kaomojis;
+			kaomojiList[file.substring(3)] = kaomojis;
 		});
 	});
 
-	await fs.writeFile(
-		path.join(BUILDPATH, "/popup.js"),
+	await writeFile(
+		join(BUILDPATH, "/popup.js"),
 		"const KAOMOJIS = " +
 			JSON.stringify(kaomojiList) +
-			";" +
-			(await fs.readFile(path.join(BUILDPATH, "/popup.js")))
+			";\n" +
+			(await readFile(join(BUILDPATH, "/popup.js")))
 	);
 }
 
@@ -102,8 +108,6 @@ async function zipBuild() {
 		))();
 }
 
-exports.clean = clean;
-exports.build = build;
-exports.deploy = series(clean, build, zipBuild);
+export const deploy = series(clean, build, zipBuild);
 
-exports.default = series(clean, build);
+export default series(clean, build);
